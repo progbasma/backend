@@ -434,6 +434,7 @@ export interface ApiPostcategoryPostcategory
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
+    description: '';
     displayName: 'Product';
     pluralName: 'products';
     singularName: 'product';
@@ -445,6 +446,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
